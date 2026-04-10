@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Núkk Shop</title>
+
+<meta name="description" content="Pterodactyl panel berkualitas dengan harga terjangkau, cepat, dan terpercaya.">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="Núkk Shop">
+<meta property="og:description" content="Pterodactyl panel berkualitas dengan harga terjangkau, cepat, dan terpercaya.">
+<meta property="og:image" content="https://img2.pixhost.to/images/7071/713529441_sifah.jpg">
+<meta property="og:image:secure_url" content="https://img2.pixhost.to/images/7071/713529441_sifah.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Núkk Shop">
+<meta name="twitter:description" content="Pterodactyl panel berkualitas dengan harga terjangkau, cepat, dan terpercaya.">
+<meta name="twitter:image" content="https://img2.pixhost.to/images/7071/713529441_sifah.jpg">
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="icon" href="https://img2.pixhost.to/images/7071/713529441_sifah.jpg">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#eef4ff;
+  color:#1e293b;
+}
+
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+  padding:14px;
+  display:flex;
+  justify-content:center;
+}
+
+.header-center{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
+  font-size:18px;
+  color:#2563eb;
+}
+
+.cart-svg{
+  width:22px;
+  height:22px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.cart-svg:hover{
+  stroke:#1e40af;
+  fill:#1e40af;
+}
+
+.banner{
+  width:100%;
+  height:181px;
+
+  border:1px solid #2563eb;
+  border-radius:0 0 20px 20px;
+
+  overflow:hidden; 
+}
+
+.slider{
+  display:flex;
+  height:100%;
+  transition:0.5s ease;
+  will-change: transform;
+}
+
+.slider img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+
+.container{
+  padding:15px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+
+  margin-top:-60px; 
+  position:relative;
+  z-index:2;
+}
+
+.banner{
+  position:relative;
+  z-index:1;
+  margin-bottom:20px;
+}
+
+
+.card{
+  background:white;
+  border-radius:16px;
+  padding:12px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(37,99,235,0.08);
+  transition:0.25s;
+  border:1px solid rgba(37,99,235,0.08);
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 12px 25px rgba(37,99,235,0.15);
+}
+
+.card img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:8px;
+}
+
+
+.nama{
+  font-size:14px;
+  font-weight:500;
+}
+
+.harga{
+  color:#2563eb;
+  font-weight:600;
+  margin-top:3px;
+}
+
+
+.btn{
+  margin-top:10px;
+  background:linear-gradient(135deg,#3b82f6,#60a5fa);
+  color:white;
+  padding:8px;
+  border-radius:10px;
+  font-size:13px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.btn:hover{
+  opacity:0.9;
+}
+
+
+.section-title{
+  font-size:18px;
+  font-weight:600;
+  color:#1e3a8a;
+}
+
+.section-desc{
+  font-size:13px;
+  color:#64748b;
+  margin-top:2px;
+}
+
+.section-line{
+  height:3px;
+  width:50px;
+  background:linear-gradient(90deg,#3b82f6,#60a5fa);
+  border-radius:10px;
+  margin:8px 0 15px;
+}
+
+.section{
+  grid-column:1/-1;
+}
+
+
+.grid-produk{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+}
+
+.btn:active{
+  transform:scale(0.95);
+}
+
+.info-box{
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  color:#1e40af;
+  font-size:12px;
+  padding:8px;
+  border-radius:10px;
+  margin-top:6px;
+  text-align:left;
+}
+
+.footer{
+  text-align:center;
+  font-size:12px;
+  color:#1e293b;
+  font-weight:500;
+  padding:20px 10px;
+  margin-top:20px;
+  border-top:1px solid rgba(0,0,0,0.05);
+  text-shadow:0 1px 2px rgba(0,0,0,0.1);
+  position:relative;
+  z-index:5;
+}
+
+.info-title{
+  font-weight:600;
+  font-size:13px;
+  margin-bottom:4px;
+}
+
+.info-text{
+  font-size:12px;
+}
+
+.slider{
+  display:flex;
+  height:100%;
+  transition:0.5s ease;
+  will-change: transform;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.btn{
+  margin-top:10px;
+  background:linear-gradient(135deg,#3b82f6,#60a5fa);
+  color:white;
+  padding:8px;
+  border-radius:10px;
+  font-size:13px;
+  cursor:pointer;
+  transition:0.2s;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+
+.btn svg{
+  width:16px;
+  height:16px;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 15px rgba(59,130,246,0.4);
+}
+
+.header-center{
+  display:flex;
+  justify-content:center;
+  width:100%;
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center; 
+}
+
+.brand-top{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:18px;
+  font-weight:600;
+  color:#2563eb;
+}
+
+.brand-bottom{
+  display:flex;
+  align-items:center;   
+  justify-content:center;
+  gap:6px;
+
+  font-size:18px;
+  font-weight:600;
+  color:#2563eb;
+
+  margin-top:2px;
+}
+
+.server-svg{
+  width:18px;
+  height:18px;
+  position:relative;
+  top:-1px; 
+}
+
+.brand-bottom:hover .server-svg{
+  transform:scale(1.15);
+}
+
+.logo-svg{
+  width:18px;
+  height:18px;
+}
+
+.brand-bottom{
+  margin-top:2px;
+}
+
+
+.hamburger{
+  position:absolute;
+  left:15px;
+  top:50%;
+  transform:translateY(-50%);
+
+  width:42px;
+  height:42px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(12px);
+
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.4);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  cursor:pointer;
+  z-index:200;
+
+  transition:0.3s cubic-bezier(.4,0,.2,1);
+}
+
+
+.hamburger:hover{
+  transform:translateY(-50%) scale(1.06);
+  box-shadow:
+    0 12px 25px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+
+.hamburger span{
+  display:block;
+  height:2.5px;
+  width:18px;
+  background:#2563eb;
+  border-radius:10px;
+  transition:0.4s cubic-bezier(.4,0,.2,1);
+}
+
+
+.hamburger.active span:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+  opacity:0;
+  transform:scale(0);
+}
+
+.hamburger.active span:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+
+.menu {
+  position: absolute;
+  top: 70px;
+  left: 5px;
+  
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+  width: max-content;
+  
+  /* 🔥 SUPER BLUR */
+  background: rgba(37, 99, 235, 0.15);
+  backdrop-filter: blur(60px) saturate(200%);
+  -webkit-backdrop-filter: blur(60px) saturate(200%);
+  
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  
+  box-shadow:
+    0 20px 60px rgba(37, 99, 235, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  
+  opacity: 0;
+  transform: translateY(-12px) scale(0.95);
+  pointer-events: none;
+  
+  transition: 0.35s cubic-bezier(.4, 0, .2, 1);
+  z-index: 150;
+}
+
+.menu::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(80px);
+  -webkit-backdrop-filter:blur(80px);
+
+  z-index:-1;
+}
+
+
+.menu.active{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  pointer-events:auto;
+}
+
+
+
+.menu-btn{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  padding:10px 16px;
+
+  border-radius:12px;
+
+  font-size:14px;
+  font-weight:500;
+
+  text-decoration:none;
+  color:white;
+
+  white-space:nowrap;
+
+  transition:0.25s cubic-bezier(.4,0,.2,1);
+}
+
+
+.menu-btn.wa{
+  background:linear-gradient(135deg,#25D366,#1ebe5d);
+}
+
+
+.menu-btn.tg{
+  background:linear-gradient(135deg,#229ED9,#1d8cc7);
+}
+
+
+.menu-btn svg{
+  width:18px;
+  height:18px;
+}
+
+
+.menu-btn:hover{
+  transform:translateY(-2px) scale(1.04);
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+.menu-btn:active{
+  transform:scale(0.96);
+}
+
+.menu-btn.tg svg,
+.telegram-icon {
+  width:14px;  
+  height:14px; 
+  vertical-align:middle; 
+}
+
+.scroll-hint{
+  text-align:center;
+  font-size:13px;
+  color:#2563eb;
+  margin:10px 0;
+
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(6px); }
+}
+
+.container{
+  padding:15px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+
+  margin-top:10px; 
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:60px;
+
+  background:linear-gradient(to top, #eef4ff, transparent);
+  pointer-events:none;
+}
+
+.ads-icon{
+  width:21px;
+  height:21px;
+  transition:0.3s;
+}
+
+.ads-btn:hover .ads-icon{
+  transform:scale(1.2) rotate(10deg);
+  filter:drop-shadow(0 0 6px rgba(255,255,255,0.6));
+}
+
+.scroll-hint{
+  will-change: opacity, transform;
+  text-align:center;
+  font-size:13px;
+  color:#2563eb;
+  margin:10px 0;
+
+  animation: bounce 1.5s infinite;
+
+  opacity:1;
+  transform:translateY(0);
+
+  transition:
+    opacity 1s cubic-bezier(.22,1,.36,1),
+    transform 1s cubic-bezier(.22,1,.36,1);
+}
+
+
+#loading-screen{
+  position:fixed;
+  inset:0;
+  background:#eef4ff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+
+.loader{
+  width:50px;
+  height:50px;
+  border:4px solid rgba(37,99,235,0.2);
+  border-top:4px solid #2563eb;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin-bottom:15px;
+}
+
+@keyframes spin{
+  to{ transform:rotate(360deg); }
+}
+
+
+.loading-text{
+  font-size:16px;
+  color:#2563eb;
+  font-weight:500;
+  letter-spacing:1px;
+}
+
+
+#welcome-screen{
+  position:fixed;
+  inset:0;
+  background:#eef4ff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9998;
+
+  opacity:0;
+  pointer-events:none;
+  transition:0.5s;
+}
+
+#welcome-screen.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+#welcome-text{
+  font-size:28px;
+  font-weight:600;
+  color:#2563eb;
+  letter-spacing:2px;
+}
+
+.info-text{
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* 🔥 BLUR BACKGROUND */
+#blurOverlay{
+  position:fixed;
+  inset:0;
+  backdrop-filter:blur(8px);
+  background:rgba(0,0,0,0.3);
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:0.4s ease;
+  z-index:90;
+}
+
+#blurOverlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* 🔥 IKLAN */
+.ads-box{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-60%) scale(0.9);
+
+  width:90%;
+  max-width:340px;
+
+  background:white;
+  border-radius:20px;
+  overflow:hidden;
+
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+  z-index:100;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition: all 0.4s cubic-bezier(.22,1,.36,1);
+}
+
+/* 🔥 AKTIF */
+.ads-box.show{
+  opacity:1;
+  transform:translate(-50%,-50%) scale(1);
+  pointer-events:auto;
+}
+
+.ads-box img{
+  width:100%;
+  height:auto; /* biar tidak kepotong */
+  display:block;
+}
+
+/* isi */
+.ads-content{
+  padding:12px;
+  text-align:center;
+}
+
+.ads-title{
+  font-weight:600;
+  font-size:15px;
+  color:#1e3a8a;
+}
+
+.ads-desc{
+  font-size:12px;
+  color:#64748b;
+  margin-top:5px;
+}
+
+/* tombol */
+.ads-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  margin-top:10px;
+  background:linear-gradient(135deg,#3b82f6,#60a5fa);
+  color:white;
+  padding:10px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:500;
+
+  transition:0.25s;
+}
+
+/* ukuran svg */
+.ads-btn svg{
+  width:18px;
+  height:18px;
+}
+
+.ads-channel-icon{
+  width:28px !important;
+  height:28px !important;
+  filter:drop-shadow(0 0 6px rgba(255,255,255,0.6));
+}
+
+/* efek hover */
+.ads-btn:hover{
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:0 8px 20px #3b82f6(37,211,102,0.5);
+}
+
+/* tombol X */
+.ads-close{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:28px;
+  height:28px;
+  background:rgba(0,0,0,0.6);
+  color:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+/* animasi */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translate(-50%,-60%);
+  }
+  to{
+    opacity:1;
+    transform:translate(-50%,-50%);
+  }
+}
+
+.card.premium{
+  border:1px solid gold;
+  box-shadow:0 0 20px rgba(255,215,0,0.4);
+}
+
+.ads-channel-icon{
+  width:28px;
+  height:28px;
+}
+</style>
+</head>
+
+<body>
+
+
+<div id="loading-screen">
+  <div class="loader"></div>
+  <div class="loading-text">
+    Loading<span id="dots"></span>
+  </div>
+</div>
+
+
+<div id="welcome-screen">
+  <h1 id="welcome-text"></h1>
+</div>
+
+<header class="header">
+  <div class="header-center">
+
+  
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  
+  <div class="menu" id="menu">
+    
+  <!-- Isi Dengan Nomor WhatsApp Kamu -->
+<a href="https://whatsapp.com/channel/0029Vb6hL9pGufJ38JTojQ3e/992" target="_blank" class="menu-btn wa">
+  <svg viewBox="0 0 32 32">
+    <path fill="#ffffff" d="M16.001 3C9.373 3 4 8.373 4 15.001c0 2.648.773 5.095 2.104 7.164L4 29l7.041-2.071a11.94 11.94 0 004.96 1.072C22.629 28 28 22.628 28 16.001 28 9.373 22.629 3 16.001 3zm0 22.693a9.683 9.683 0 01-4.928-1.354l-.354-.21-4.178 1.23 1.239-4.076-.231-.366A9.68 9.68 0 016.32 15c0-5.35 4.332-9.68 9.68-9.68 5.35 0 9.68 4.33 9.68 9.68 0 5.349-4.33 9.693-9.68 9.693zm5.317-7.283c-.29-.145-1.717-.851-1.982-.948-.266-.099-.459-.145-.65.145-.19.29-.748.947-.917 1.139-.17.192-.338.217-.628.073-.29-.145-1.226-.451-2.335-1.437-.862-.769-1.442-1.719-1.612-2.009-.17-.289-.018-.445.128-.589.132-.132.29-.338.436-.507.145-.17.193-.289.29-.482.099-.192.049-.362-.025-.507-.073-.145-.65-1.566-.891-2.145-.234-.561-.471-.485-.65-.495l-.554-.01c-.192 0-.507.073-.774.362-.266.29-1.016.992-1.016 2.414s1.04 2.8 1.183 2.992c.145.193 2.044 3.12 4.949 4.378.692.298 1.231.476 1.65.61.693.22 1.323.189 1.821.115.556-.083 1.717-.7 1.96-1.377.242-.677.242-1.257.17-1.377-.073-.119-.266-.19-.556-.334z"/>
+  </svg>
+  Channel WhatsApp
+</a>
+
+<!-- Isi Dengan User Name Telegram Kamu -->
+<a href="https://t.me/NyXuQi" target="_blank" class="menu-btn tg">
+  <svg class="telegram-icon" viewBox="0 0 24 24">
+    <path fill="white" d="M9.04 15.54l-.39 5.46c.56 0 .8-.24 1.09-.52l2.61-2.5 5.41 3.96c.99.55 1.69.26 1.95-.92l3.54-16.6c.34-1.54-.56-2.14-1.52-1.78L1.7 9.29c-1.49.58-1.47 1.41-.25 1.79l5.1 1.59L18.27 5.5c.55-.34 1.05-.15.64.19"/>
+  </svg>
+  Contact Telegram
+</a>
+
+  </div>
+
+  <div class="header-center">
+
+    <div class="brand">
+      
+      <div class="brand-top">
+        Núkk Shop
+        <svg class="logo-svg" viewBox="0 0 24 24" fill="none">
+          <path d="M6 6H21L19 14H8L6 6Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="20" r="1.5" fill="#2563eb"/>
+          <circle cx="18" cy="20" r="1.5" fill="#2563eb"/>
+          <path d="M6 6L5 3H2" stroke="#2563eb" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+<div class="brand-bottom">
+  Panel Pterodactyl
+
+  
+  <svg class="server-svg" viewBox="0 0 24 24" fill="none">
+    <rect x="3" y="4" width="18" height="6" rx="2" stroke="#2563eb" stroke-width="2"/>
+    <rect x="3" y="14" width="18" height="6" rx="2" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="7" cy="7" r="1" fill="#2563eb"/>
+    <circle cx="7" cy="17" r="1" fill="#2563eb"/>
+  </svg>
+</div>
+
+    </div>
+
+  </div>
+</header>
+
+<!-- 🔥 BLUR OVERLAY -->
+<div id="blurOverlay"></div>
+
+<!-- 🔥 IKLAN -->
+<div class="ads-box" id="adsBox">
+
+  <div class="ads-close" onclick="closeAds()">✕</div>
+
+  <img src="https://img2.pixhost.to/images/7070/713519889_sifah.jpg">
+
+  <div class="ads-content">
+<div class="ads-title">NúkkEásy-Hub</div>
+
+<div class="ads-desc">
+  Dapatkan info update terbaru<br>
+  Promo, harga, dan info penting lainnya langsung dari admin!
+</div>
+
+<a href="https://whatsapp.com/channel/0029Vb6hL9pGufJ38JTojQ3e" target="_blank" class="ads-btn">
+
+<svg viewBox="0 0 100 100" class="ads-channel-icon">
+  <path fill="white" d="M49,20c-16.5,0-30,13.5-30,30s13.5,30,30,30s30-13.5,30-30S65.5,20,49,20z M72.8,47h-7.9
+	c-0.3-7.1-1.9-13.3-4.3-18C67.2,32.7,71.8,39.3,72.8,47z M46,27.3V47h-6.9C39.6,37.6,42.6,30.2,46,27.3z M46,53v19.7
+	c-3.4-2.9-6.4-10.3-6.9-19.7L46,53z M52,72.7V53h6.9C58.4,62.4,55.4,69.8,52,72.7z M52,47V27.3c3.4,2.9,6.4,10.3,6.9,19.7H52z
+	 M37.4,29c-2.4,4.7-3.9,10.9-4.3,18h-7.9C26.2,39.3,30.8,32.7,37.4,29z M25.2,53h7.9c0.3,7.1,1.9,13.3,4.3,18
+	C30.8,67.3,26.2,60.7,25.2,53z M60.6,71c2.4-4.7,3.9-10.9,4.3-18h7.9C71.8,60.7,67.2,67.3,60.6,71z" />
+</svg>
+  
+  Gabung Sekarang
+</a>
+  </div>
+
+</div>
+
+<div class="ads-box" id="adsBox2">
+
+  <div class="ads-close" onclick="closeAds2()">✕</div>
+
+  <img src="https://img2.pixhost.to/images/7070/713513954_sifah.jpg"> <!-- GANTI GAMBAR -->
+
+  <div class="ads-content">
+    <div class="ads-title">SífahSécret</div>
+
+    <div class="ads-desc">
+      Script bot whatsApp<br>
+      klik tombol di bawah untuk melihat fitur bot nya
+    </div>
+
+<a href="https://wa.me/6285820511163?text=.start%20bot" target="_blank" class="ads-btn">
+      
+  <svg viewBox="0 0 310 310" class="ads-icon">
+  <path fill="white" d="M309.987,118.749L302.24,12.383c-0.18-2.475-2.148-4.443-4.623-4.624L191.251,0.013c-1.461-0.106-2.873,0.424-3.899,1.451L1.465,187.352c-1.953,1.953-1.953,5.119,0,7.071l114.112,114.112c0.976,0.976,2.256,1.464,3.535,1.464c1.279,0,2.56-0.488,3.535-1.464l185.888-185.888C309.563,121.621,310.093,120.198,309.987,118.749z M189.136,136.38l-7.941,7.94c3.446,5.183,5.917,10.785,7.047,16.04c0.199,0.923,0.023,1.888-0.489,2.681c-0.513,0.793-1.318,1.351-2.242,1.549l-13.225,2.846c-0.923,0.198-1.887,0.022-2.681-0.49c-0.792-0.512-1.351-1.318-1.549-2.241c-0.94-4.369-4.233-10.055-8.007-13.83c-3.921-3.921-11.627-9.477-15.654-5.449c-4.106,4.108-3.56,7.357,3.442,20.445c6.006,11.223,15.082,28.184,0.02,42.996c-5.943,5.945-13.956,8.37-22.541,6.807c-3.749-0.683-7.507-2.117-11.201-4.271l-8.292,8.292c-1.39,1.39-3.645,1.39-5.035,0l-9.566-9.566c-1.391-1.39-1.391-3.644,0-5.035l7.67-7.67c-5.672-8.046-8.854-17.896-8.604-26.929c0.054-1.966,1.691-3.515,3.657-3.462l13.523,0.374c1.966,0.055,3.515,1.692,3.46,3.656c-0.16,5.809,2.963,13.103,7.596,17.751c0.019,0.02,0.037,0.038,0.057,0.057c3.574,3.568,7.376,5.932,10.435,6.489c2.349,0.428,3.494-0.342,4.304-1.153c3.234-3.18,3.134-5.849-3.685-18.594c-6.194-11.575-15.554-29.066,0.162-44.786c9.53-9.53,23.745-9.885,36.856-1.164l7.885-7.884c0.668-0.668,1.573-1.043,2.518-1.043c0.944,0,1.85,0.376,2.517,1.043l9.565,9.566C190.527,132.735,190.527,134.99,189.136,136.38z M236.96,95.109c-13.066,0-23.695-10.629-23.695-23.694c0-13.065,10.63-23.695,23.695-23.695c13.065,0,23.695,10.63,23.695,23.695C260.656,84.479,250.026,95.109,236.96,95.109z"/>
+</svg>
+
+      Lihat sekarang
+    </a>
+  </div>
+
+</div>
+
+<div class="banner">
+  <div class="slider" id="slider">
+    <img src="https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773719248597-cx81cvyt.jpg" loading="eager" decoding="async">
+<img src="https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773720301397-d4i30o6b.jpg" loading="eager" decoding="async">
+<img src="https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773720261905-aj6l5ojn.jpg" loading="eager" decoding="async">
+  </div>
+</div>
+
+
+
+<div class="container" id="produk"></div>
+<footer class="footer">
+  © 2026 | Powered By NúkkEásy
+</footer>
+
+<script>
+const nomor = "6285820511163" //Nomor WhatsApp
+
+const data = [
+  {nama:"Panel Ram 5Gb",harga:3000,kategori:"makanan",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773747155318-qnx2xjo9.png"},
+  
+  {nama:"Reseller Panel",harga:7000,kategori:"minuman",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773748160406-i19ur35y.jpg"},
+
+  {nama:"Ceo Panel",harga:10000,kategori:"minuman",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773776249309-nfkpzf6j.jpg"},
+  
+  {nama:"Owner Panel 1 Bulan",harga:10000,kategori:"minuman",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1774464908566-n1ww3ahi.jpg"},
+  
+  {nama:"Owner Panel",harga:20000,kategori:"minuman",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1774464908566-n1ww3ahi.jpg"},
+  
+  {nama:"Panel Ram 6Gb",harga:4000,kategori:"makanan",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773747155318-qnx2xjo9.png"},
+  {nama:"Panel Ram 7Gb",harga:5000,kategori:"makanan",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773747155318-qnx2xjo9.png"},
+  {nama:"Panel Ram 8Gb",harga:6000,kategori:"makanan",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773747155318-qnx2xjo9.png"},
+  {nama:"Panel Ram 9Gb",harga:7000,kategori:"makanan",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773747155318-qnx2xjo9.png"},
+  {nama:"Panel Ram Unli",harga:8000,kategori:"makanan",img:"https://risrfgvolfxuavpsmfjn.supabase.co/storage/v1/object/public/uploads/1773747155318-qnx2xjo9.png"},
+]
+
+let kategoriAktif = "all"
+
+function tampilProduk(){
+  const container = document.getElementById("produk")
+  container.innerHTML=""
+
+  const filtered = data
+  .filter(p => (kategoriAktif==="all" || p.kategori===kategoriAktif))
+    
+
+  if(kategoriAktif === "all"){
+
+    
+    container.innerHTML += `
+      <div class="section reveal">
+        <div class="section-title">Panel Pterodactyl</div>
+        <div class="section-desc">Pilih ram sesuai kebutuhanmu, jalankan bot lancar tanpa lag.</div>
+        <div class="section-line"></div>
+
+        <div class="grid-produk" id="makanan"></div>
+      </div>
+    `
+
+    const makanan = document.getElementById("makanan")
+
+    filtered
+      .filter(p=>p.kategori==="makanan")
+      .forEach(p=>{
+        makanan.innerHTML += cardHTML(p)
+      })
+
+    
+    container.innerHTML += `
+      <div class="section">
+        <div class="section-title">Role Panel Pterodactyl</div>
+        <div class="section-desc">Berbagai role panel siap dipilih sesuai keinginan.</div>
+        <div class="section-line"></div>
+
+        <div class="grid-produk" id="minuman"></div>
+      </div>
+    `
+
+    const minuman = document.getElementById("minuman")
+
+    filtered
+      .filter(p=>p.kategori==="minuman")
+      .forEach(p=>{
+        minuman.innerHTML += cardHTML(p)
+      })
+
+  } else {
+
+    filtered.forEach(p=>{
+      container.innerHTML += cardHTML(p)
+    })
+
+  }
+}
+
+
+function cardHTML(p) {
+  
+  let badge = ""
+  let premiumClass = ""
+  
+  // 🔥 Auto Premium
+  if (p.nama === "Owner Panel") {
+    premiumClass = "premium"
+    badge = `<div style="
+    position:absolute;
+    top:8px;
+    right:8px;
+    background:gold;
+    color:black;
+    font-size:10px;
+    padding:3px 6px;
+    border-radius:6px;
+  ">👑 BEST</div>`
+  }
+  
+  // 🔥 Optional: kasih efek juga untuk 1 bulan
+  if (p.nama === "Owner Panel 1 Bulan") {
+    premiumClass = "premium"
+  }
+  
+  let extra = ""
+  
+  if (p.nama === "Reseller Panel") {
+    extra = `
+    <div class="info-box">
+      <div class="info-title">Role Reseller Panel</div>
+      <div class="info-text">
+        • Masuk grup Telegram eksklusif<br>
+        • Bebas create panel<br>
+        • Bebas jual panel<br>
+        • Cocok untuk pemula mulai bisnis panel<br>
+        • Tanpa akses admin tetap bisa cuan
+      </div>
+    </div>
+  `
+  }
+  
+  if (p.nama === "Ceo Panel") {
+    extra = `
+    <div class="info-box">
+      <div class="info-title">Role Ceo Panel</div>
+      <div class="info-text">
+        • Akses Admin Panel penuh<br>
+        • Masuk grup Telegram eksklusif<br>
+        • Bebas create panel tanpa batas<br>
+        • Bebas jual panel sepuasnya<br>
+        • Cocok untuk bangun bisnis serius<br>
+        • Profit tanpa batas<br>
+        • Mendapatkan title ceo di grub
+      </div>
+    </div>
+  `
+  }
+  
+  if (p.nama === "Owner Panel 1 Bulan") {
+    extra = `
+    <div class="info-box">
+      <div class="info-title">Owner Panel (1 Bulan)</div>
+      <div class="info-text">
+        • Akses penuh semua fitur panel<br>
+        • Hak akses tertinggi (sementara)<br>
+        • Masuk grup Telegram eksklusif<br>
+        • Bebas create & manage panel<br>
+        • Bebas jual panel<br>
+        • Kontrol penuh sistem panel<br>
+        • Masa aktif 30 hari<br>
+        • Cocok untuk trial bisnis panel<br>
+        • Mendapatkan title Owner di grub
+      </div>
+    </div>
+  `
+  }
+  
+  if (p.nama === "Owner Panel") {
+    extra = `
+    <div class="info-box">
+      <div class="info-title">Role Owner Panel</div>
+      <div class="info-text">
+        • Akses penuh semua fitur panel<br>
+        • Mendapat hak akses tertinggi<br>
+        • Masuk grup Telegram eksklusif<br>
+        • Bebas create & manage panel<br>
+        • Bebas jual panel tanpa batas<br>
+        • Prioritas support admin<br>
+        • Cocok untuk pebisnis serius<br>
+        • Kontrol penuh sistem panel<br>
+        • Mendapatkan title Owner di grub
+      </div>
+    </div>
+  `
+  }
+  
+  return `
+  <div class="reveal">
+    <div class="card ${premiumClass}" style="position:relative;">
+      ${badge}
+      <img src="${p.img}" loading="lazy" decoding="async">
+      <div class="nama">${p.nama}</div>
+      <div class="harga">Rp ${p.harga.toLocaleString("id-ID")}</div>
+      <div class="btn" onclick="orderWA('${p.nama}',${p.harga})">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M6 8L7 20H17L18 8" stroke="white" stroke-width="2" stroke-linecap="round" />
+          <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke="white" stroke-width="2" />
+        </svg>
+        Order
+      </div>
+    </div>
+    ${extra}
+  </div>`
+}
+
+
+function orderWA(nama,harga){
+  const formatHarga = harga.toLocaleString("id-ID")
+  const pesan = `Halo Admin, saya mau order:%0A- ${nama} Dengan Harga Rp${formatHarga}`
+  window.open(`https://wa.me/${nomor}?text=${pesan}`)
+}
+
+
+tampilProduk()
+
+let index = 0
+const slider = document.getElementById("slider")
+const total = slider.children.length
+
+function showSlide(){
+  slider.style.transform = `translateX(-${index * 100}%)`
+}
+
+
+let auto = setInterval(()=>{
+  index = (index + 1) % total
+  showSlide()
+}, 6000) 
+
+
+
+let startX = 0
+
+slider.addEventListener("touchstart", (e)=>{
+  startX = e.touches[0].clientX
+})
+
+slider.addEventListener("touchend", (e)=>{
+  let endX = e.changedTouches[0].clientX
+  let diff = startX - endX
+
+  if(diff > 50){
+    index = (index + 1) % total
+  }else if(diff < -50){
+    index = (index - 1 + total) % total
+  }
+
+  showSlide()
+
+  
+  clearInterval(auto)
+  auto = setInterval(()=>{
+  index = (index + 1) % total
+  showSlide()
+}, 6000) 
+})
+
+function revealOnScroll(){
+  const reveals = document.querySelectorAll(".reveal")
+
+  reveals.forEach(el=>{
+    const windowHeight = window.innerHeight
+    const elementTop = el.getBoundingClientRect().top
+    const visiblePoint = 100
+
+    if(elementTop < windowHeight - visiblePoint){
+      el.classList.add("active")
+    }
+  })
+}
+
+window.addEventListener("scroll", revealOnScroll)
+window.addEventListener("load", revealOnScroll)
+window.addEventListener("scroll", ()=>{
+  const scroll = window.scrollY
+  const banner = document.querySelector(".banner")
+
+  banner.style.transform = `translateY(${scroll * 0.2}px)`
+})
+
+
+const hamburger = document.getElementById("hamburger")
+const menu = document.getElementById("menu")
+
+hamburger.addEventListener("click", ()=>{
+  hamburger.classList.toggle("active")
+  menu.classList.toggle("active")
+})
+
+window.addEventListener("load", ()=>{
+  setTimeout(()=>{
+    window.scrollTo({
+      top: 120,
+      behavior: "smooth"
+    })
+  }, 800)
+})
+
+const scrollHint = document.querySelector(".scroll-hint")
+let sudahScroll = false
+
+window.addEventListener("scroll", () => {
+  if(!sudahScroll && window.scrollY > 100){
+    sudahScroll = true
+
+    scrollHint.style.opacity = "0"
+    scrollHint.style.transform = "translateY(-20px) scale(0.95)"
+
+    setTimeout(()=>{
+      scrollHint.style.display = "none"
+    }, 1000) 
+  }
+})
+
+
+const dots = document.getElementById("dots")
+let dotCount = 0
+
+setInterval(()=>{
+  dotCount = (dotCount + 1) % 4
+  dots.textContent = ".".repeat(dotCount)
+}, 400)
+
+
+
+window.addEventListener("load", ()=>{
+  setTimeout(()=>{
+    
+    document.getElementById("loading-screen").style.display = "none"
+
+    const welcome = document.getElementById("welcome-screen")
+    welcome.classList.add("show")
+
+    // 🔥 TAMBAHKAN INI
+    setTimeout(() => {
+      showAds()
+    }, 2000)
+
+    const text = "Welcome To Núkk Shop"
+    const target = document.getElementById("welcome-text")
+    let i = 0
+
+    function ketik(){
+      if(i < text.length){
+        target.textContent += text[i]
+        i++
+        setTimeout(ketik, 120)
+      } else {
+
+        setTimeout(()=>{
+          welcome.style.opacity = "0"
+          setTimeout(()=>{
+            welcome.style.display = "none"
+          }, 500)
+        }, 1000)
+      }
+    }
+
+    ketik()
+
+  }, 1500) 
+})
+
+function closeAds(){
+  const ads = document.getElementById("adsBox")
+  const blur = document.getElementById("blurOverlay")
+
+  ads.classList.remove("show")
+
+  setTimeout(()=>{
+    ads.style.display = "none"
+
+    // 🔥 MUNCULKAN ADS KE-2
+    showAds2()
+  },400)
+}
+
+function showAds(){
+  const ads = document.getElementById("adsBox")
+  const blur = document.getElementById("blurOverlay")
+
+  ads.style.display = "block"
+  blur.style.display = "block"
+
+  setTimeout(()=>{
+    ads.classList.add("show")
+    blur.classList.add("show")
+  },50)
+}
+
+function showAds2(){
+  const ads2 = document.getElementById("adsBox2")
+  const blur = document.getElementById("blurOverlay")
+
+  ads2.style.display = "block"
+  blur.style.display = "block"
+
+  setTimeout(()=>{
+    ads2.classList.add("show")
+    blur.classList.add("show")
+  },50)
+}
+
+function closeAds2(){
+  const ads2 = document.getElementById("adsBox2")
+  const blur = document.getElementById("blurOverlay")
+
+  ads2.classList.remove("show")
+  blur.classList.remove("show")
+
+  setTimeout(()=>{
+    ads2.style.display = "none"
+    blur.style.display = "none"
+  },400)
+}
+
+</script>
+
+</body>
+</html>
